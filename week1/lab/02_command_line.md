@@ -88,8 +88,7 @@ An **absolute file path** specifies the complete path to a file, ignoring your c
 * Rename `plot1.png` as `scatterplot.png`, and rename `plot2.png` as `histogram.png`.
 * Create a subdirectory called `viz`, and then move `scatterplot.png` and `histogram.png` to `viz`.
 * Delete `other.csv` from the `data` subdirectory.
-* Navigate back to `project`, and then print out (with a single command) all of its files, subdirectories, and the contents of those subdirectories. The output should look similar to [this image](../other/02_exercise_output.png).
-* Viewing this [collapsible tree diagram](../other/02_file_tree.png) may help you to visualize the directory structure that we have created.
+* Navigate back to `project`, and then print out (with a single command) all of its files, subdirectories, and the contents of those subdirectories.
 
 
 ### Intermediate commands
@@ -157,3 +156,6 @@ An **absolute file path** specifies the complete path to a file, ignoring your c
 * `uniq <filename>` discards all but one of the successive identical lines (thus it only keeps **uniq**ue lines)
 * `uniq -c <filename>` also records the **c**ount of the number of occurrences
 * Because lines must be successive to be counted as identical, you will usually use `sort` before `uniq`.
+
+
+### ~/.bash_profile

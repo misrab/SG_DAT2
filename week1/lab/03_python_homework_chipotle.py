@@ -13,6 +13,7 @@ Hint: This is a TSV file, and csv.reader() needs to be told how to handle it.
 import csv
 
 # specify that the delimiter is a tab character
+# make 'file_nested_list' = list of rows
 
 
 
