@@ -1,5 +1,0 @@
-
-
-git add -A . &&
-git commit -m "msg here" &&
-git push origin master
