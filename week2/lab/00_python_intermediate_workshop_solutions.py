@@ -12,7 +12,7 @@ a = [1, 2, 3, 4, 5]     # create lists using brackets
 # slicing
 a[0]        # returns 1 (Python is zero indexed)
 a[1:3]      # returns [2, 3] (inclusive of first index but exclusive of second)
-a[4:-3]       # returns 5 (last element)
+a[-1]       # returns 5 (last element)
 
 # appending
 a[5] = 6        # error because you can't assign outside the existing range
@@ -69,14 +69,14 @@ EXERCISE:
 Bonus: Sort the list by the length of the names (shortest to longest).
 '''
 
-# list of names
-# last element
-# length of first string
-# overwrite existing element
-# append new element
-# change last string to be lowercase
-# sort the list in reverse order
-# sort the list by length
+names = ['Wesley', 'Larry', 'Wan']  # list of names
+names[-1]                           # last element
+len(names[0])                       # length of first string
+names[0] = 'Wes'                    # overwrite existing element
+names.append('Gabriel')             # append new element
+names[-1] = names[-1].lower()       # change last string to be lowercase
+sorted(names, reverse=True)         # sort the list in reverse order
+sorted(names, key=len)              # sort the list by length
 
 
 '''
@@ -87,8 +87,6 @@ FOR LOOPS AND LIST COMPREHENSIONS
 nums = range(1, 6)      # create a list of 1 through 5
 for num in nums:        # num 'becomes' each list element for one loop
     print num
-
-
 
 # for loop to print 1, 3, 5
 other = [1, 3, 5]       # create a different list
@@ -101,28 +99,10 @@ for num in nums:            # loop through nums (will execute 5 times)
     doubled.append(num*2)   # append the double of the current value of num
 
 # equivalent list comprehension
-doubled = [num for num in nums if num > 5]   # expression (num*2) goes first, brackets
+doubled = [num*2 for num in nums]   # expression (num*2) goes first, brackets
                                     # indicate we are storing results in a list
 
-tups = [ (3,4,5), (4,7,8) ]
-real = [  (x,y,z) for (x,y,z) in tups if x^2 + y^2 = z^2]
 
-    
-
-    
-    
-    
-# want squares for 3, 4, 5
-result = []
-for i in range(3,6):
-    result.append(i**2)
-print(result)
-
-
-result = [ monkey**2 for monkey in range(3,6)]
-    
-    
-    
 '''
 EXERCISE 1:
 Given that: letters = ['a', 'b', 'c']
@@ -138,13 +118,13 @@ Write a list comprehension that returns: ['A', 'B', 'C']
 '''
 
 letters = ['a', 'b', 'c']
-# iterate through a list of strings,
-# and each string has an 'upper' method
+[letter.upper() for letter in letters]  # iterate through a list of strings,
+                                        # and each string has an 'upper' method
 word = 'abc'
-# iterate through each character
+[letter.upper() for letter in word]     # iterate through each character
 
 fruits = ['Apple', 'Banana', 'Cherry']
-# slice the first character from each string
+[fruit[0] for fruit in fruits]          # slice the first character from each string
 
 
 '''
@@ -197,17 +177,17 @@ EXERCISE:
 Bonus: Do this last step using a list comprehension.
 '''
 
-# returns 'Marge'
-# replaces existing value for 'size'
-# access a list, then append 'Maggie' to it
-# capitalize names by overwriting them
-
+family['mom']                       # returns 'Marge'
+family['size'] = 5                  # replaces existing value for 'size'
+family['kids'].append('Maggie')     # access a list, then append 'Maggie' to it
+family['kids'][0] = 'Bart'          # capitalize names by overwriting them
+family['kids'][1] = 'Lisa'
 
 # or, capitalize using a list comprehension and the 'capitalize' string method
-
+family['kids'] = [kid.capitalize() for kid in family['kids']]
 
 # or, slice the string, uppercase the first letter, and concatenate with other letters
-
+family['kids'] = [kid[0].upper() + kid[1:] for kid in family['kids']]
 
 
 '''
